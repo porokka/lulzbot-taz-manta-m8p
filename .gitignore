@@ -1,0 +1,10 @@
+# Klipper runtime artefacts - never commit
+*.log
+*.db
+*.bak*
+*.cur
+*.CUR
+printer.cfg.bak-*
+printer.cfg.kiauh-example
+printer.cfg.READY-*
+.theme/
