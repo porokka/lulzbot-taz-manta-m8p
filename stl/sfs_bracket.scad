@@ -131,7 +131,10 @@ corner_r       = 14;      // material around each fixing centre
 /* [LGX tension lever clearance] */
 // The lever must stay reachable - it was needed once to diagnose whether the
 // gears were gripping, and it will be needed again.
-lever_cut      = false;   // enable once the lever position is measured
+// VERIFIED on the fitted part: no cut needed. The sensor body is wider than
+// the LGX Ace, so it stands clear of the lever on its own and the lever stays
+// reachable. Left here as a parameter in case a narrower sensor is fitted.
+lever_cut      = false;
 lever_cut_w    = 16;
 lever_cut_h    = 14;
 lever_cut_x    = 0;
