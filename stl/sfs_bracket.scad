@@ -84,6 +84,17 @@ access_top_w   = 6;
 // Relief on the BACK face, behind each sensor screw. Without it a screw longer
 // than plate_t + boss_h stands proud and holds the bracket off the adapter -
 // on the first print that needed a hot iron to sink them.
+//
+// SCREW LENGTH IS CRITICAL - USE M3 x 16, NOT LONGER.
+// Material from the relief floor to the sensor face is
+//     plate_t + boss_h - back_relief_h = 5 + 14 - 4 = 15 mm
+// so a 20 mm screw stands 5 mm proud into the sensor body. That is enough to
+// reach the ENCODER WHEEL and jam it. The symptom is brutal to diagnose from
+// the control board: the switch half keeps working, the motion half goes
+// completely silent, and it looks exactly like dead encoder electronics.
+// Cost us three plug positions and two wrong conclusions before the wheel was
+// found binding only when the housing was closed.
+// 16 mm leaves ~1 mm of engagement, which is all the sensor wants.
 back_relief_d  = 8;
 // 5 deep, which is the whole of plate_t: raising boss_h from 10 to 15 added
 // 5 mm of material in front of these screws, and sinking the relief by the

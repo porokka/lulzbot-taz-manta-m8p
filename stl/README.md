@@ -36,7 +36,7 @@ grows upward off a solid first layer, nothing needs support, and the foot and
 web share every layer up to `plate_t`, so their junction is solid rather than a
 bond between layers. That junction is the only place the part sees real bending.
 
-Hardware: **M3 × 20** for the sensor (threads into the sensor body, heads recess
+Hardware: **M3 × 16** for the sensor (NOT longer - see below) (threads into the sensor body, heads recess
 into the Ø8 pockets on the back), M4 for the three adapter fixings.
 
 ### Fitted corrections
@@ -45,3 +45,15 @@ Numbers changed after offering the printed part up to the machine, not from the
 drawing: sensor shifted 5 mm across (`sensor_x`), standoff set to 19 mm
 (`boss_h`), driver access opened from a round bore to an L-shaped notch because
 a bore wide enough for a screwdriver breaks out of the back of the foot.
+
+### Screw length (learned the hard way)
+
+Use **M3 × 16** for the sensor, not longer. Material from the relief floor to
+the sensor face is `plate_t + boss_h - back_relief_h` = 15 mm, so a 20 mm screw
+stands 5 mm proud into the sensor body — far enough to reach the **encoder
+wheel and jam it**.
+
+The failure is nasty to diagnose from the control board, because the sensor's
+switch half keeps working perfectly while the motion half goes silent. It looks
+exactly like dead encoder electronics. It was only found by opening the housing
+and noticing the wheel turned freely open and stopped when closed.
